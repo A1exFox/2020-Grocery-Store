@@ -1,0 +1,14 @@
+.env
+www/tmp
+www/composer.lock
+www/vendor/*
+!www/vendor/wfm/
+
+# Your inbox options from https://mailtrap.io/
+# Details in: www/config/params.php
+www/config/smtp.php
+
+
+www/public/adminlte/ckfinder/*
+!www/public/adminlte/ckfinder/config.php
+www/public/uploads/.ckfinder
