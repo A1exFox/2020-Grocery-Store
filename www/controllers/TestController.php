@@ -8,9 +8,17 @@ class TestController extends Controller
 {
     public $defaultAction = 'my-test';
 
-    public function actionIndex()
+    public function actions()
     {
-        return "Hi";
+        return [
+            'test' => 'app\components\HelloAction',
+        ];
+    }
+
+    public function actionIndex($name, $age = null)
+    {
+        // var_dump($_GET);
+        return "<h1>$name - $age</h1>";
     }
 
     public function actionMyTest()

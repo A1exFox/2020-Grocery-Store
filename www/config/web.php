@@ -11,7 +11,11 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
-    'defaultRoute' => 'site/about',
+    // 'controllerMap' => [
+    //     // объявляет "account" контроллер, используя название класса
+    //     'test' => 'app\controllers\SiteController',
+    // ],
+    // 'defaultRoute' => 'site/about',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
