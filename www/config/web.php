@@ -11,6 +11,8 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'language' => 'ru',
+    // 'layout' => 'test',
     // 'controllerMap' => [
     //     // объявляет "account" контроллер, используя название класса
     //     'test' => 'app\controllers\SiteController',
