@@ -6,19 +6,22 @@ use yii\web\Controller;
 
 class TestController extends Controller
 {
-    public $defaultAction = 'my-test';
+    // public $defaultAction = 'my-test';
 
-    public function actions()
-    {
-        return [
-            'test' => 'app\components\HelloAction',
-        ];
-    }
+    // public function actions()
+    // {
+    //     return [
+    //         'test' => 'app\components\HelloAction',
+    //     ];
+    // }
 
-    public function actionIndex($name, $age = null)
+    public function actionIndex($name = 'Guest', $age = 25)
     {
-        // var_dump($_GET);
-        return "<h1>$name - $age</h1>";
+        // return $this->renderFile('@app/views/test/index.php');
+        // return $this->renderAjax('index');
+        // return $this->renderPartial('index');
+        // return $this->render('index', ['name' => $name, 'age' => $age]);
+        return $this->render('index', compact('name', 'age'));
     }
 
     public function actionMyTest()
