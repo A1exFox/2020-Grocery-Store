@@ -1,10 +1,12 @@
 <?php
 
 use yii\helpers\Html;
+use app\assets\TestAsset;
+
 
 $this->beginPage();
 
-\app\assets\TestAsset::register($this);
+TestAsset::register($this);
 ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
@@ -19,7 +21,11 @@ $this->beginPage();
 
 <body>
     <?php $this->beginBody() ?>
-    <?= $content ?>
+    <div class="container">
+        <div class="row">
+            <?= $content ?>
+        </div>
+    </div>
     <?php $this->endBody() ?>
 </body>
 

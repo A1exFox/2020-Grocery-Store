@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-use yii\web\View;
+use app\models\EntryForm;
 
 class TestController extends AppController
 {
@@ -19,23 +19,14 @@ class TestController extends AppController
 
     public function actionIndex($name = 'Guest', $age = 25)
     {
-        // debug(\Yii::getAlias('@webroot'));
-        // debug(\Yii::getAlias('@web'));
-        $this->my_var = 'My variable';
         $this->layout = 'test';
         $this->view->title = 'Test page';
-        // return $this->renderFile('@app/views/test/index.php');
-        // return $this->renderAjax('index');
-        // return $this->renderPartial('index');
-        // return $this->render('index', ['name' => $name, 'age' => $age]);
-        // \Yii::$app->view->params['t1'] = 'T1 params';
         $this->view->params['t1'] = 'T1 params';
+        $this->view->registerMetaTag(['name' => 'description', 'content' => 'test test desc'], 'description');
 
-        \Yii::$app->view->on(View::EVENT_END_BODY, function () {
-            echo "<p>&copy Yii2 " . date("Y") . "</p>";
-        });
+        $model = new EntryForm();
 
-        return $this->render('index', compact('name', 'age'));
+        return $this->render('index', compact('model'));
     }
 
     public function actionMyTest()

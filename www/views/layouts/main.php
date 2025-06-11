@@ -77,15 +77,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
             </div>
         </div>
     </footer>
-    <?= $this->context->my_var ?>
-    <?php if (isset($this->context->my_var)): ?>
-        <?= $this->context->my_var ?>
-        <?= $this->params['t1'] ?>
-        <?= $this->params['t2'] ?>
-    <?php endif; ?>
-    <?php if (isset($this->blocks['block1'])): ?>
-        <?= $this->blocks['block1'] ?>
-    <?php endif; ?>
+
 
     <?php $this->endBody() ?>
 </body>

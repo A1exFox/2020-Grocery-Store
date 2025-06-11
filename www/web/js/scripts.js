@@ -1,3 +1,2 @@
 $(function () {
-    alert('123');
 })
