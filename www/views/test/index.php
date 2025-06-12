@@ -31,7 +31,7 @@ use yii\widgets\Pjax;
 
     <?= $form->field($model, 'name')->textInput(['placeholder' => 'Введите имя']) ?>
     <?= $form->field($model, 'email')->input('email', ['placeholder' => 'Введите email']) ?>
-    <?= $form->field($model, 'topic')->input('text', ['placeholder' => 'Тема сообщения']) ?>
+    <?= $form->field($model, 'topic', ['enableAjaxValidation' => true])->input('text', ['placeholder' => 'Тема сообщения']) ?>
     <?= $form->field($model, 'text')->textarea(['rows' => 7, 'placeholder' => 'Введите текст']) ?>
     <div class="form-group">
         <div class="col-md-5 col-md-offset-2">
@@ -41,3 +41,27 @@ use yii\widgets\Pjax;
     <?php ActiveForm::end(); ?>
     <?php Pjax::end(); ?>
 </div>
+
+<?php
+$js = <<<JS
+    var form = $('#my-form')
+    form.on('beforeSubmit', function() {
+        var data = form.serialize();
+        $.ajax({
+            url: form.attr('action'),
+            type: 'POST',
+            data: data,
+            success: function (res) {
+                console.log(res);
+                form[0].reset();
+            },
+            error: function() {
+                alert('Error');
+            }
+        })
+        return false
+    })
+JS;
+
+$this->registerJs($js);
+?>

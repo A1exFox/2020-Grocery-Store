@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 use app\models\EntryForm;
+use yii\web\Response;
+use yii\widgets\ActiveForm;
 
 class TestController extends AppController
 {
@@ -26,8 +28,15 @@ class TestController extends AppController
 
         $model = new EntryForm();
 
-        if ($model->load(\Yii::$app->request->post()) && $model->validate()) {
-            return $this->refresh();
+        $model->load(\Yii::$app->request->post());
+        if (\Yii::$app->request->isAjax) {
+            \Yii::$app->response->format = Response::FORMAT_JSON;
+            if ($model->validate()) {
+                return ['message' => 'ok'];
+            } else {
+                return ActiveForm::validate($model);
+            }
+            //return ActiveForm::validate($model);
         }
 
         return $this->render('index', compact('model'));
