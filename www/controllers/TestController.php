@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Country;
 use app\models\EntryForm;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
@@ -47,5 +48,13 @@ class TestController extends AppController
         $this->layout = 'test';
         $this->view->registerMetaTag(['name' => 'description', 'content' => 'test test desc'], 'description');
         return $this->render('my-test');
+    }
+
+    public function actionView()
+    {
+        $this->layout = 'test';
+        $this->view->title = 'Работа с моделями';
+        $model = new Country();
+        return $this->render('view', compact('model'));
     }
 }
