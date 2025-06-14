@@ -1,0 +1,36 @@
+{
+    "PHP Strict Types": {
+        "prefix": "@strict",
+        "body": [
+            "declare(strict_types=1);",
+            "$0"
+        ],
+        "description": "Inserting declare(strict_types=1)"
+    },
+    "PHP class with extends": {
+        "prefix": "@clwe",
+        "body": [
+            "<?php",
+            "",
+            "namespace $1;",
+            "",
+            "class $TM_FILENAME_BASE extends $2",
+            "{",
+            "\t$3",
+            "}",
+        ],
+    },
+    "PHP class without extends": {
+        "prefix": "@cloe",
+        "body": [
+            "<?php",
+            "",
+            "namespace $1;",
+            "",
+            "class $TM_FILENAME_BASE",
+            "{",
+            "\t$2",
+            "}",
+        ],
+    }
+}

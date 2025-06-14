@@ -17,6 +17,35 @@
 /*M!100616 SET @OLD_NOTE_VERBOSITY=@@NOTE_VERBOSITY, NOTE_VERBOSITY=0 */;
 
 --
+-- Table structure for table `wfm_categories`
+--
+
+DROP TABLE IF EXISTS `wfm_categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `wfm_categories` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wfm_categories`
+--
+
+LOCK TABLES `wfm_categories` WRITE;
+/*!40000 ALTER TABLE `wfm_categories` DISABLE KEYS */;
+INSERT INTO `wfm_categories` VALUES
+(1,'Apple'),
+(2,'Asus'),
+(3,'Nokia'),
+(4,'Samsung'),
+(5,'Sony');
+/*!40000 ALTER TABLE `wfm_categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `wfm_countries`
 --
 
@@ -51,6 +80,42 @@ INSERT INTO `wfm_countries` VALUES
 ('US','United States',322976000,0);
 /*!40000 ALTER TABLE `wfm_countries` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `wfm_products`
+--
+
+DROP TABLE IF EXISTS `wfm_products`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `wfm_products` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `category_id` int(10) unsigned NOT NULL,
+  `price` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `wfm_products`
+--
+
+LOCK TABLES `wfm_products` WRITE;
+/*!40000 ALTER TABLE `wfm_products` DISABLE KEYS */;
+INSERT INTO `wfm_products` VALUES
+(1,'Apple iPhone XS Max 64GB (Silver) Dual SIM',1,1100),
+(2,'iPhone 7 Plus 128Gb Black',1,600),
+(3,'Apple iPhone SE 32gb Gold Neverlock',1,400),
+(4,'Мобильный телефон Asus ZenFone Live 2GB/32GB (ZB501KL-4A053A) DualSim Navy Black',2,120),
+(5,'Мобильный телефон Nokia 3.1 Plus Dual Sim 3/32GB TA-1104 Baltic',3,150),
+(6,'Мобильный телефон Nokia 7 Plus Dual Sim Black',3,280),
+(7,'Мобильный телефон Samsung Galaxy S10 8/128 GB Black (SM-G973FZKDSEK)',4,1000),
+(8,'Мобильный телефон Samsung Galaxy A30 4/64GB Blue (SM-A305FZBOSEK)',4,220),
+(9,'Мобильный телефон Samsung Galaxy S9 Plus 64GB Titanium Gray',4,800),
+(10,'Мобильный телефон Samsung Galaxy Note 9 6/128GB Midnight Black',4,850);
+/*!40000 ALTER TABLE `wfm_products` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -61,4 +126,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2025-06-14  6:03:30
+-- Dump completed on 2025-06-14 15:56:10
