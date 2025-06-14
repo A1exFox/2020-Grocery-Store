@@ -92,4 +92,39 @@ class TestController extends AppController
 
         return $this->render('view', compact('countries'));
     }
+
+    public function actionCreate()
+    {
+        $this->layout = 'test';
+        $this->view->title = 'Create action';
+
+        $country = new Country();
+
+        if (\yii::$app->request->isAjax) {
+            $country->load(\Yii::$app->request->post());
+            \Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($country);
+        }
+
+        $post = \Yii::$app->request->post();
+        $load = $country->load($post);
+        $success = $load && $country->save();
+
+        if ($success) {
+            \Yii::$app->session->setFlash('success', 'OK');
+            return $this->refresh();
+        }
+
+        // $country->code = 'KZ';
+        // $country->name = 'Kazachstan';
+        // $country->population = '28000000';
+        // $country->status = 1;
+        // if ($country->save()) {
+        //     \Yii::$app->session->setFlash('success', 'OK');
+        // } else {
+        //     \Yii::$app->session->setFlash('error', 'OK');
+        // }
+
+        return $this->render('create', compact('country'));
+    }
 }
