@@ -54,7 +54,42 @@ class TestController extends AppController
     {
         $this->layout = 'test';
         $this->view->title = 'Работа с моделями';
-        $model = new Country();
-        return $this->render('view', compact('model'));
+
+        // $countries = Country::find()
+        //     ->where('population < :population AND code <> :code', [':code' => 'AU', 'population' => 100000000])
+        //     ->all();
+
+        // $countries = Country::find()
+        //     ->where([
+        //         'code' => ['DE', 'FR', 'GB',],
+        //         'status' => 1,
+        //     ])
+        //     ->all();
+
+        // $countries = Country::find()
+        //     ->where(['like', 'name', 'ni',])
+        //     ->all();
+
+        // $countries = Country::find()
+        //     ->orderBy('population ASC')
+        //     ->all();
+
+        // $countries = Country::find()->count();
+
+        // $countries = Country::find()
+        //     ->where(['code' => 'CN'])
+        //     ->one();
+
+        // $countries = Country::findAll(['DE', 'FR', 'GB']);
+
+        // $countries = Country::findOne('CN');
+
+        $countries = Country::find()
+            ->asArray()
+            ->all();
+
+        // debug($countries, true);
+
+        return $this->render('view', compact('countries'));
     }
 }
