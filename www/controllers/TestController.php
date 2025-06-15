@@ -21,25 +21,52 @@ class TestController extends AppController
     //     ];
     // }
 
-    public function actionIndex($name = 'Guest', $age = 25)
+    public function actionIndex($alert = '', $name = 'Guest', $age = 25)
     {
         $this->layout = 'test';
         $this->view->title = 'Test page';
         $this->view->params['t1'] = 'T1 params';
         $this->view->registerMetaTag(['name' => 'description', 'content' => 'test test desc'], 'description');
 
+
+        switch ($alert) {
+            case 'error':
+                \Yii::$app->session->setFlash('error', 'Error');
+                break;
+            case 'success':
+                \Yii::$app->session->setFlash('success', 'OK');
+                break;
+            case 'info':
+                \Yii::$app->session->setFlash('info', 'INFO');
+                break;
+            case 'warning':
+                \Yii::$app->session->setFlash('warning', 'WARNING');
+                break;
+            default:
+                \Yii::$app->session->setFlash('danger', 'Danger');
+        }
+
         $model = new EntryForm();
 
-        $model->load(\Yii::$app->request->post());
-        if (\Yii::$app->request->isAjax) {
-            \Yii::$app->response->format = Response::FORMAT_JSON;
+        if ($model->load(\Yii::$app->request->post())) {
             if ($model->validate()) {
-                return ['message' => 'ok'];
+                \Yii::$app->session->setFlash('success', 'OK');
+                return $this->refresh();
             } else {
-                return ActiveForm::validate($model);
+                \Yii::$app->session->setFlash('error', 'Error');
             }
-            //return ActiveForm::validate($model);
         }
+
+        // $model->load(\Yii::$app->request->post());
+        // if (\Yii::$app->request->isAjax) {
+        //     \Yii::$app->response->format = Response::FORMAT_JSON;
+        //     if ($model->validate()) {
+        //         return ['message' => 'ok'];
+        //     } else {
+        //         return ActiveForm::validate($model);
+        //     }
+        //     //return ActiveForm::validate($model);
+        // }
 
         return $this->render('index', compact('model'));
     }
