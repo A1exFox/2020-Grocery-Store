@@ -26,6 +26,7 @@ DROP TABLE IF EXISTS `wfm_categories`;
 CREATE TABLE `wfm_categories` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
+  `alias` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_uca1400_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -37,11 +38,11 @@ CREATE TABLE `wfm_categories` (
 LOCK TABLES `wfm_categories` WRITE;
 /*!40000 ALTER TABLE `wfm_categories` DISABLE KEYS */;
 INSERT INTO `wfm_categories` VALUES
-(1,'Apple'),
-(2,'Asus'),
-(3,'Nokia'),
-(4,'Samsung'),
-(5,'Sony');
+(1,'Apple','apple'),
+(2,'Asus','asus'),
+(3,'Nokia','nokia'),
+(4,'Samsung','samsung'),
+(5,'Sony','sony');
 /*!40000 ALTER TABLE `wfm_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -126,4 +127,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2025-06-14 15:56:10
+-- Dump completed on 2025-06-15 12:08:26
