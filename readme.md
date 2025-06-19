@@ -1,1 +1,0 @@
-# WebForMyself project
