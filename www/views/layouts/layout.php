@@ -20,13 +20,13 @@ $this->beginPage() ?>
     <?php $this->beginBody(); ?>
 
     <header style="padding:20px;background-color:burlywood">
-        Header::<?= $this->blocks['block'] ?>
+        Header
     </header>
     <main style="padding:20px;">
         <?= $content ?>
     </main>
     <footer style="padding:20px;background-color:burlywood">
-        Footer::<?= $this->blocks['block'] ?>
+        Footer
     </footer>
 
     <?php $this->endBody(); ?>
