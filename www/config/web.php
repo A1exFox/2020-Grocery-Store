@@ -14,6 +14,7 @@ $config = [
     'language' => 'ru',
     'layout' => 'layout',
     'charset' => 'UTF-8',
+    'defaultRoute' => 'lesson/lesson',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
