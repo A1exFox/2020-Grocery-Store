@@ -1,1 +1,3 @@
-alert('Скрипт из веб доступной директории')
+$(function () {
+    alert('alert by jquery')
+})
