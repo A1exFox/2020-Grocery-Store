@@ -1,4 +1,3 @@
 .env
 www/composer.lock
-www/vendor/*
-!www/vendor/wfm/
+readme.md

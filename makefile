@@ -21,6 +21,10 @@ help:
 	@echo "Mysql commands:"
 	@echo "  dump           - Dump database"
 	@echo ""
+	@echo "  yiicreate      - Create new Yii2 project"
+	@echo ""
+	@echo "  nginx-reload   - Reload nginx config"
+	@echo ""
 	@echo "Composer commands:"
 	@echo "  cinit          - Init 'composer.json'"
 	@echo "  cinstall       - Install packages"
@@ -71,6 +75,13 @@ dump:
 	--password=$(MYSQL_PASSWORD) \
 	$(MYSQL_DATABASE) > ./docker/db/$(MYSQL_DATABASE).sql
 
+# Yii commands:
+yiicreate:
+	@$(PHP_EXEC) composer create-project --prefer-dist yiisoft/yii2-app-basic /var/www
+
+# Nginx reload:
+nginx-reload:
+	@docker exec nginx nginx -s reload
 
 # Composer commands:
 cinit:

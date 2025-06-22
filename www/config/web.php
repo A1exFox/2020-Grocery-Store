@@ -11,18 +11,10 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
-    'language' => 'ru',
-    // 'layout' => 'test',
-    // 'controllerMap' => [
-    //     // объявляет "account" контроллер, используя название класса
-    //     'test' => 'app\controllers\SiteController',
-    // ],
-    // 'defaultRoute' => 'site/about',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => '8oUgNZHcBSCVIejq730sJW2zi8YaYVe9',
-            'baseUrl' => '',
+            'cookieValidationKey' => '6KX8eEmQq0AeNvSv054viM3WYepRuBoR',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -50,17 +42,14 @@ $config = [
             ],
         ],
         'db' => $db,
-
+        /*
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'enableStrictParsing' => false,
             'rules' => [
-                // 'category/view/<id:\d+>' => 'category/view',
-                // 'category/<id:\d+>' => 'category/view',
-                'category/<alias>' => 'category/view',
             ],
         ],
+        */
     ],
     'params' => $params,
 ];
@@ -72,8 +61,6 @@ if (YII_ENV_DEV) {
         'class' => 'yii\debug\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
         //'allowedIPs' => ['127.0.0.1', '::1'],
-        //'allowedIPs' => ['*'],
-        'allowedIPs' => [$_SERVER['REMOTE_ADDR']],
     ];
 
     $config['bootstrap'][] = 'gii';
