@@ -51,7 +51,10 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'enableStrictParsing' => false,
-            'rules' => [],
+            'rules' => [
+                'category/<id:\d+>' => 'category/view',
+                'product/<id:\d+>' => 'product/view',
+            ],
         ],
     ],
     'params' => $params,
