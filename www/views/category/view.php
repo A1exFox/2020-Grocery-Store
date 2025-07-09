@@ -1,6 +1,8 @@
 <?php
 
 use yii\helpers\Url;
+use yii\widgets\LinkPager;
+
 ?>
 <!-- products-breadcrumb -->
 <div class="products-breadcrumb">
@@ -126,6 +128,13 @@ use yii\helpers\Url;
                         </div>
                     <?php endforeach; ?>
                     <div class="clearfix"> </div>
+                    <div class="col-md-12">
+                        <?= LinkPager::widget([
+                            'pagination' => $pages,
+                            'nextPageCssClass' => 'next test',
+                            // 'maxButtonCount' => 3,
+                        ]) ?>
+                    </div>
                 </div>
             <?php else: ?>
                 <div class="w3ls_w3l_banner_nav_right_grid1">
