@@ -91,7 +91,7 @@ INSERT INTO `product` VALUES
 (2,1,'chings noodles (75 gm)','Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',5.00,8.00,NULL,NULL,'6.png',0),
 (3,1,'lahsun sev (150 gm)','Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',3.00,5.00,NULL,NULL,'7.png',0),
 (4,1,'premium bake rusk (300 gm)','Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',5.00,7.00,NULL,NULL,'8.png',0),
-(5,4,'fresh spinach (palak)','Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',2.00,3.00,NULL,NULL,'9.png',1),
+(5,1,'fresh spinach (palak)','Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',2.00,3.00,NULL,NULL,'9.png',1),
 (6,5,'fresh mango dasheri (1 kg)','Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',5.00,8.00,NULL,NULL,'10.png',0),
 (7,5,'fresh apple red (1 kg)','Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',6.00,8.00,NULL,NULL,'11.png',1),
 (8,4,'fresh broccoli (500 gm)','Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',4.00,6.00,NULL,NULL,'12.png',0),
@@ -111,4 +111,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2025-07-09  7:09:43
+-- Dump completed on 2025-07-09 10:43:47
