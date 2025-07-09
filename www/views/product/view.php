@@ -14,7 +14,11 @@
                     <?= $product->category->title ?>
                 </a>
                 <span>|</span>
-                <?/*= \yii\helpers\Html::a($product->category->title, ['category/view', 'id' => $product->category->id]) */ ?><!--
+                <?/*= \yii\helpers\Html::a($product->category->title, ['category/view', 'id' => $product->category->id]) */
+
+                use yii\helpers\Url;
+
+                ?><!--
                 <span>|</span>-->
             </li>
             <li><?= $product->title; ?></li>
@@ -64,20 +68,11 @@
                         </h4>
                     </div>
                     <div class="snipcart-details agileinfo_single_right_details">
-                        <form action="#" method="post">
-                            <fieldset>
-                                <input type="hidden" name="cmd" value="_cart" />
-                                <input type="hidden" name="add" value="1" />
-                                <input type="hidden" name="business" value=" " />
-                                <input type="hidden" name="item_name" value="pulao basmati rice" />
-                                <input type="hidden" name="amount" value="21.00" />
-                                <input type="hidden" name="discount_amount" value="1.00" />
-                                <input type="hidden" name="currency_code" value="USD" />
-                                <input type="hidden" name="return" value=" " />
-                                <input type="hidden" name="cancel_return" value=" " />
-                                <input type="submit" name="submit" value="Add to cart" class="button" />
-                            </fieldset>
-                        </form>
+                        <a href="<?= Url::to(['cart/add', 'id' => $product->id]) ?>"
+                            class="button add-to-cart"
+                            data-id="<?= $product->id ?>">
+                            Add to cart
+                        </a>
                     </div>
                 </div>
             </div>
