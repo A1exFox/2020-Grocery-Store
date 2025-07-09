@@ -40,8 +40,8 @@ CREATE TABLE `category` (
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` VALUES
-(1,0,'Branded Foods','Branded Foods keywords','Branded Foods description'),
-(2,0,'Households','Households keywords','Households description'),
+(1,0,'Branded Foods','Branded Foods description','Branded Foods keywords'),
+(2,0,'Households','Households description','Households keywords'),
 (3,0,'Veggies & Fruits','Veggies & Fruits description','Veggies & Fruits keywords'),
 (4,3,'Vegetables','Vegetables description','Vegetables keywords'),
 (5,3,'Fruits','Fruits description','Fruits keywords'),
@@ -111,4 +111,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2025-06-26 10:31:22
+-- Dump completed on 2025-07-09  7:09:43
