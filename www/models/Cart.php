@@ -8,6 +8,10 @@ class Cart extends Model
 {
     public function addToCart($product, $qty = 1)
     {
+        if ($qty == '-1') {
+            $qty = -1;
+        }
+
         if (isset($_SESSION['cart'][$product->id])) {
             $_SESSION['cart'][$product->id]['qty'] += $qty;
         } else {
@@ -29,6 +33,10 @@ class Cart extends Model
             $_SESSION['cart.sum'] += $qty * $product->price;
         } else {
             $_SESSION['cart.sum'] = $qty * $product->price;
+        }
+
+        if ($_SESSION['cart'][$product->id]['qty'] == 0) {
+            unset($_SESSION['cart'][$product->id]);
         }
     }
 
