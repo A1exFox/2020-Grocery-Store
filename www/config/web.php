@@ -16,6 +16,16 @@ $config = [
     'name' => 'Grocery Store',
     'layout' => 'grocery',
     'components' => [
+        'assetManager' => [
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'sourcePath' => null,
+                    'js' => [
+                        'js/jquery-1.11.1.min.js',
+                    ]
+                ],
+            ],
+        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '6KX8eEmQq0AeNvSv054viM3WYepRuBoR',

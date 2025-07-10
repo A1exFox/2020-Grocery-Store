@@ -32,5 +32,13 @@
             "\t$2",
             "}",
         ],
-    }
+    },
+    "PHP line": {
+        "prefix": "@p",
+        "body": "<?php $1 ?>",
+    },
+    "PHP echo line": {
+        "prefix": "@e",
+        "body": "<?= $1 ?>",
+    },
 }
