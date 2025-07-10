@@ -39,8 +39,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </form>
         </div>
         <div class="product_list_header">
-            <button type="button" class="button" data-toggle="modal" data-target="#modal-cart">
-                $0
+            <button
+                type="button"
+                class="button"
+                data-toggle="modal"
+                data-target="#modal-cart"
+                onclick="getCart()">
+                <span class="cart-sum">
+                    $<?= $_SESSION['cart.sum'] ?? 0 ?>
+                </span>
             </button>
 
             <div class="modal fade" id="modal-cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -51,7 +58,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <h4 class="modal-title" id="myModalLabel">Корзина</h4>
                         </div>
                         <div class="modal-body">
-                            ...
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">
@@ -67,13 +74,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                 </div>
             </div>
-            <!-- <form action="#" method="post" class="last">
-                <fieldset>
-                    <input type="hidden" name="cmd" value="_cart" />
-                    <input type="hidden" name="display" value="1" />
-                    <input type="submit" name="submit" value="View your cart" class="button" />
-                </fieldset>
-            </form> -->
         </div>
         <div class="w3l_header_right">
             <ul>

@@ -4864,7 +4864,7 @@ input.checkbox:checked:after {
 
 .product_list_header span {
     color: inherit;
-    top: 1em;
+    top: inherit;
 }
 
 .snipcart-details a.button {
