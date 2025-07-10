@@ -67,7 +67,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <a href="<?= Url::to(['cart/view']) ?>" type="button" class="btn btn-success">
                                 Оформить заказ
                             </a>
-                            <button type="button" class="btn btn-danger">
+                            <button
+                                type="button"
+                                class="btn btn-danger"
+                                onclick="clearCart()">
                                 Очистить корзину
                             </button>
                         </div>

@@ -32,4 +32,30 @@ class CartController extends AppController
         $session->open();
         return $this->renderPartial('cart-modal', compact('session'));
     }
+
+    public function actionDelItem()
+    {
+        $id = \Yii::$app->request->get('id');
+        $session = \Yii::$app->session;
+        $session->open();
+        $cart = new Cart();
+        $cart->recalc($id);
+        return $this->renderPartial('cart-modal', compact('session'));
+    }
+
+    public function actionClear()
+    {
+        $session = \Yii::$app->session;
+        $session->open();
+        $session->remove('cart');
+        $session->remove('cart.qty');
+        $session->remove('cart.sum');
+        return $this->renderPartial('cart-modal', compact('session'));
+    }
+
+    public function actionView()
+    {
+        $this->setMeta(sprintf('Оформление заказа::%s', \Yii::$app->name));
+        return $this->render('view');
+    }
 }

@@ -4865,6 +4865,11 @@ input.checkbox:checked:after {
 .product_list_header span {
     color: inherit;
     top: inherit;
+    cursor: pointer;
+}
+
+#modal-cart td span {
+    color: red;
 }
 
 .snipcart-details a.button {
