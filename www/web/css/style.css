@@ -4890,3 +4890,27 @@ input.checkbox:checked:after {
 .agile_top_brand_left_grid:hover .snipcart-details a.button, .snipcart-details a.button:hover {
     background: #84C639;
 }
+
+.cart-table {
+    position: relative;
+}
+
+.cart-table .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 2;
+    display: none;
+}
+
+.cart-table .overlay .fa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 30px;
+    margin-left: -15px;
+    margin-top: -15px;
+}

@@ -64,7 +64,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                 Продолжить покупки
                             </button>
-                            <a href="<?= Url::to(['cart/view']) ?>" type="button" class="btn btn-success">
+                            <a href="<?= Url::to(['cart/checkout']) ?>" type="button" class="btn btn-success">
                                 Оформить заказ
                             </a>
                             <button
